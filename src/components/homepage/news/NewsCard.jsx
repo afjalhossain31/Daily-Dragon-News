@@ -13,6 +13,7 @@ const NewsCard = ({ news }) => {
         {/* Author info */}
         <div className="flex justify-between items-center bg-slate-200 p-4">
           <div className="flex gap-1 items-center">
+
             <Image
               src={news.author?.img}
               alt={news.author?.name}
@@ -20,6 +21,7 @@ const NewsCard = ({ news }) => {
               width={40}
               className="rounded-full"
             />
+            
             <div>
               <h2 className="font-semibold">{news.author?.name}</h2>
               <p className="text-xs">{news.author?.published_date}</p>

@@ -1,5 +1,6 @@
 import Navbar from "@/components/shared/Navbar";
 import React from "react";
+// montserrat font layout import
 import { montserrat } from "../layout";
 
 const AuthLayout = ({ children }) => {
