@@ -12,6 +12,7 @@ const NewsCard = ({ news }) => {
       <div className="card-body">
         {/* Author info */}
         <div className="flex justify-between items-center bg-slate-200 p-4">
+
           <div className="flex gap-1 items-center">
 
             <Image
@@ -21,11 +22,12 @@ const NewsCard = ({ news }) => {
               width={40}
               className="rounded-full"
             />
-            
+
             <div>
               <h2 className="font-semibold">{news.author?.name}</h2>
               <p className="text-xs">{news.author?.published_date}</p>
             </div>
+
           </div>
           <div className="flex justify-between items-center">
             <CiShare2 className="text-xl" />
@@ -47,7 +49,7 @@ const NewsCard = ({ news }) => {
 
         <p className="line-clamp-3">{news.details}</p>
 
-        <div className="flex items-center justify-between gap-2">
+        <div className="flex items-center justify-between gap-2 mt-4">
           <div className="flex items-center gap-2">
             <h2 className="flex items-center gap-2">
               <IoIosStar className="text-lg text-yellow-500" />
@@ -59,11 +61,11 @@ const NewsCard = ({ news }) => {
               {news.total_view}
             </h2>
           </div>
-
-          <Link href={`/news/${news._id}`}>
-            <button className="btn">See details</button>
-          </Link>
         </div>
+
+        <Link href={`/news/${news._id}`} className="block mt-4">
+          <button className="btn btn-lg bg-gray-400 text-white hover:bg-gray-500 rounded w-full">See details</button>
+        </Link>
       </div>
     </div>
   );

@@ -28,8 +28,11 @@ const BreakingNews = () => {
       
       <Marquee pauseOnHover={true} speed={100}>
 
-        {news.map((n) => (
-          <span key={n._id}>{n.title}</span>
+        {news.map((n, index) => (
+          <span key={n._id}>
+            {n.title}
+            {index < news.length - 1 && <span className="mx-6">|</span>}
+          </span>
         ))}
 
       </Marquee>
