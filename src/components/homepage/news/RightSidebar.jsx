@@ -4,6 +4,7 @@ import Image from "next/image";
 import swimming from "@/assets/swimming.png";
 import classImg from "@/assets/class.png";
 import playground from "@/assets/playground.png";
+import bg from "@/assets/bg.png";
 
 const RightSidebar = () => {
   return (
@@ -43,6 +44,10 @@ const RightSidebar = () => {
         <Image src={swimming} alt="Swimming" width={300} height={200} className="rounded" />
         <Image src={classImg} alt="Class" width={300} height={200} className="rounded" />
         <Image src={playground} alt="Playground" width={300} height={200} className="rounded" />
+      </div>
+
+      <div className="mt-6">
+        <Image src={bg} alt="Background" width={300} height={200} className="rounded" />
       </div>
 
     </div>
