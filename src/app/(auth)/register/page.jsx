@@ -24,17 +24,29 @@ const RegisterPage = () => {
       name: name, // required
       email: email, // required
       password: password, // required
-      image: photo,
+      // image: photo, // temporarily disabled
       callbackURL: "/",
     });
 
     console.log(res, error);
     if (error) {
       alert(error.message);
+      return;
     }
 
     if (res) {
-      alert("Signup successful");
+      // After successful sign up, sign in the user
+      const { data: signInRes, error: signInError } = await authClient.signIn.email({
+        email: email,
+        password: password,
+        callbackURL: "/",
+      });
+
+      if (signInError) {
+        alert("Signup successful, but sign in failed: " + signInError.message);
+      } else {
+        alert("Signup and sign in successful");
+      }
     }
   };
 

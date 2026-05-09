@@ -1,5 +1,9 @@
+"use client";
+
+import { authClient } from "@/lib/auth-client";
 import React from "react";
 import { FaGithub, FaGoogle, FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+
 import Image from "next/image";
 import swimming from "@/assets/swimming.png";
 import classImg from "@/assets/class.png";
@@ -7,19 +11,37 @@ import playground from "@/assets/playground.png";
 import bg from "@/assets/bg.png";
 
 const RightSidebar = () => {
+
+  const handleGoogleSignin = async () => {
+    const data = await authClient.signIn.social({
+      provider: "google",
+    });
+
+    console.log(data, "data");
+  };
+  const handleGithubSignin = async () => {
+    const data = await authClient.signIn.social({
+      provider: "github",
+    });
+
+    console.log(data, "data");
+  };
+  
   return (
     <div className="ml-4">
 
       <h2 className="font-bold text-lg mb-4">Login with</h2>
       <div className="flex flex-col gap-2">
 
-        <button className="btn text-blue-500 flex items-center justify-center gap-2 border border-blue-500 rounded">
+        <button className="btn text-blue-500 flex items-center justify-center gap-2 border border-blue-500 rounded onClick={handleGoogleSignin}">
           <FaGoogle />Login with google
         </button>
 
-        <button className="btn text-gray-500 flex items-center justify-center gap-2 border border-gray-500 rounded"><FaGithub />Login with github
+        <button className="btn text-gray-500 flex items-center justify-center gap-2 border border-gray-500 rounded onClick={handleGithubSignin}">
+          <FaGithub />Login with github
         </button>
       </div>
+
 
       <h2 className="font-bold text-lg mb-4 mt-6">Find Us On</h2>
 
@@ -39,6 +61,7 @@ const RightSidebar = () => {
 
         {/* images swimming, class, playground */}
       </div>
+      
       <h2 className="font-bold text-lg mb-4 mt-6">Q-Zone</h2>
       <div className="flex flex-col gap-4 bg-gray-200 p-4 rounded">
         <Image src={swimming} alt="Swimming" width={300} height={200} className="rounded" />

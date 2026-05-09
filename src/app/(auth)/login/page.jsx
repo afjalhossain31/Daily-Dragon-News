@@ -18,8 +18,6 @@ const LoginPage = () => {
     const handleLoginFunc = async (data) => {
         console.log(data, "data");
 
-        console.log(watch("email"));
-        console.log(watch("password"));
 
         const { data: res, error } = await authClient.signIn.email({
             email: data.email, // required

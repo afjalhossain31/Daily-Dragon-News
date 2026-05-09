@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import logo from "@/assets/logo.png";
 import Image from "next/image";
@@ -14,7 +16,7 @@ const Header = () => {
         className="mx-auto"
       />
       <p>Journalism Without Fear or Favour</p>
-      <p>{format(new Date(), "EEEE, MMM dd, yyyy")}</p>
+      <p suppressHydrationWarning>{format(new Date(), "EEEE, MMM dd, yyyy")}</p>
     </div>
   );
 };
