@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import logo from "@/assets/logo.png";
+import logo from "../../assets/logo.png";
 import Image from "next/image";
 import { format } from "date-fns";
 
