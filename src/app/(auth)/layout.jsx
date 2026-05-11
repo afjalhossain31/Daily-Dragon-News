@@ -1,4 +1,4 @@
-import Navbar from "../../components/shared/NavBar";
+import Navbar from "../../components/shared/Navbar";
 import React from "react";
 // montserrat font layout import
 import { montserrat } from "../layout";
